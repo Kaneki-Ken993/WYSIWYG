@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="textEditor">
+        <div class="toolbar">
+            <div class="line">
+                <div class="box">
+                    <span class="editor-button icon smaller" data-action="bold" data-tag-name="b" alt="Bald text image (the B letter)" title="bald">
+                        <img src="assets/bold.png" >
+                    </span>
+                    <span class="editor-button icon smaller" data-action="italic" data-tag-name="i" alt="Italic text image (the I letter)" title="Italic">
+                        <img src="assets/italic.png">
+                    </span>
+                    <span class="editor-button icon smaller" data-action="underline" data-tag-name="u" alt="Underline text image (the U letter)" title="Underline">
+                        <img src="assets/underline.png">
+                    </span>
+                    <span class="editor-button icon smaller" data-action="strikethrough" data-tag-name="s" alt="Strikethrough text image (the S letter)" title="Strikethrough">
+                        <img src="assets/strikethrough.png" >
+                    </span>
+                </div>
+                <div class="box">
+                    <span class="editor-button icon has-submenu">
+                        <img src="assets/align-left.png" />
+                        <div class="submenu">
+                            <span class="editor-button icon" data-action="justifyLeft" data-style="textAlign:left" title="Justify left">
+                                <img src="assets/align-left.png" />
+                            </span>
+                            <span class="editor-button icon" data-action="justifyCenter" data-style="textAlign:center"
+                                title="Justify center">
+                                <img src="assets/align-center.png" />
+                            </span>
+                            <span class="editor-button icon" data-action="justifyRight" data-style="textAlign:right"
+                                title="Justify right">
+                                <img src="assets/align-right.png" />
+                            </span>
+                            <span class="editor-button icon" data-action="formatBlock" data-style="textAlign:justify"
+                                title="Justify block">
+                                <img src="assets/align-justify.png" />
+                            </span>
+                        </div>
+                    </span>
+                    <span class="editor-button icon" data-action="insertOrderedList" data-tag-name="ol" title="Insert ordered list">
+                        <img src="assets/numbered-list.png" />
+                    </span>
+                    <span class="editor-button icon" data-action="insertUnorderedList" data-tag-name="ul" title="Insert unordered list">
+                        <img src="assets/bulleted-list.png" />
+                    </span>
+                    <span class="editor-button icon" data-action="outdent" title="Outdent" data-required-tag="li">
+                        <img src="assets/outdent.png" />
+                    </span>
+                    <span class="editor-button icon" data-action="indent" title="Indent">
+                        <img src="assets/indent.png" />
+                    </span>
+                </div>
+                <div class="box">
+                    <span class="editor-button icon" data-action="insertHorizontalRule" title="Insert horizental line">
+                        <img  src="assets/horizontal-line.png">
+                    </span>
+                </div>
+            </div>
+            <div class="line">
+                <div class="box">
+                    <span class="editor-button icon smaller" data-action="undo" title="Undo">
+                        <img src="assets/undo--v1.png" alt="">
+                    </span>
+                    <span class="editor-button icon" data-action="removeFormat" title="Remove formatting">
+                        <img src="assets/remove-format.png">
+                    </span>
+                </div>
+                <div class="box">
+                    <span class="editor-button icon smaller" data-action="createLink" title="Insert link">
+                        <img src="assets/add-link.png">
+                    </span>
+                    <span class="editor-button icon smaller" data-action="unlink" title="Unlink">
+                        <img src="assets/delete-link.png">
+                    </span>
+                </div>
+                <div class="box">
+                    <span class="editor-button icon" data-action="toggle-view" title="view source code">
+                        <img src="assets/source-code.png"  alt="">
+                    </span>
+                </div>
+                <div class="box">
+                    <span class=""  title="Insert Image"><input type="file" accept="image/*" id="file"></span>
+                </div>
+            </div>
+            <div class="content-area">
+                <div class="visual-view" contenteditable>
+                </div>
+                <textarea class="html-view"></textarea>
+            </div>
+        <div class="modal">
+            <div class="modal-bg"></div>
+            <div class="modal-wrapper">
+                <div class="close">✖</div>
+                <div class="modal-content" id="modalCreateLink">
+                    <h3>Insert Link</h3>
+                    <input type="text" id="linkValue" placeholder="https://example.com">
+                    <div class="row">
+                        <input type="checkbox" id="new-tab">
+                        <label for="new-tab">Open in new tab</label>
+                    </div>
+                    <button class="done">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
